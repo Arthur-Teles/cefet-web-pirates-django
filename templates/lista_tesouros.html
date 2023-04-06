@@ -24,8 +24,8 @@
           <td>{{tesouro.preco}}</td>
           <td>{{tesouro.quantidade}}</td>
           <td>{{tesouro.valor_total}}</td>
-          <td><a href="{% url "atualizar" id=tesouro.id %}"><img src="" alt="editar"></a></td>
-          <td><a href="{% url "deletar" id=tesouro.id %}"><img src="" alt="Deletar"></a></td>
+          <td><a href="{% url "atualizar" id=tesouro.id %}"><img src="{% static "imgs/edit.png" %}" alt="editar"></a></td>
+          <td><a href="{% url "deletar" id=tesouro.id %}"><img src="{% static "imgs/delete.svg" %}" alt="Deletar"></a></td>
         </tr>
         {% endfor %}
       </tbody>
