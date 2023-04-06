@@ -18,6 +18,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from pirates.views import *
+from django.views.generic.base import TemplateView
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+    path('atualizar/<int:id>/', SalvarTesouro.as_view(), name='atualizar'),
+    path('deletar/<int:id>/', DeletarTesouro.as_view(), name='deletar'),
+    path('inserir/', SalvarTesouro.as_view(), name="salvar"),
+    path('', ListaTesourosView.as_view(), name="tesouro"),
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
